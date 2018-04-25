@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/run"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -16,7 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".MessageActivity" />
-        <activity android:name=".NotifshowActivity"></activity>
+        <activity android:name=".NotifshowActivity" />
+        <activity android:name=".ShowViewActivity"></activity>
     </application>
 
 </manifest>

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Runoob</string>
     <string name="title_activity_message">MessageActivity</string>
+    <string name="title_activity_view_show">ViewShowActivity</string>
 </resources>

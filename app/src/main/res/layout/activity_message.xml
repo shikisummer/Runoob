@@ -18,19 +18,19 @@
         android:src="@mipmap/run"/>
 
     <Button
-        android:id="@+id/button_image"
+        android:id="@+id/button_toast"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="image"/>
+        android:text="toast"/>
     <Button
         android:id="@+id/button_show"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="显示通知"/>
     <Button
-        android:id="@+id/button_close"
+        android:id="@+id/button_dialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="关闭通知"/>
+        android:text="显示对话框"/>
 
 </LinearLayout>
