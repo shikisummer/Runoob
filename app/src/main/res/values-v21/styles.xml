@@ -3,7 +3,19 @@
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
+        <!-- 设置状态栏颜色 -->
+        <item name="colorPrimaryDark">@color/colorTest1</item>
+
+        <!--<item name="android:statusBarColor">@android:color/transparent</item>
+        -->
+        <!-- 设置Menu窗口不覆盖Toolbar视图 -->
+        <item name="overlapAnchor">false</item>
+        <!-- 设置Menu菜单的背景色 -->
+        <item name="android:itemBackground">@android:color/white</item>
+        <!-- 设置Menu菜单的字体颜色 -->
+        <item name="android:textColorPrimary">@android:color/black</item>
+        <!-- 设置溢出按钮颜色 -->
+        <item name="android:actionMenuTextColor">@color/colorWhite</item>
+
     </style>
 </resources>

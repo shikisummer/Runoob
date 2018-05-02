@@ -1,5 +1,9 @@
 <resources>
-    <string name="app_name">Runoob</string>
+    <string name="app_name">Run</string>
     <string name="title_activity_message">MessageActivity</string>
     <string name="title_activity_view_show">ViewShowActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_share">Share</string>
+    <string name="action_edit">Edit</string>
+
 </resources>
