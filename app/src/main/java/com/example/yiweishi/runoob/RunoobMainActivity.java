@@ -2,35 +2,33 @@ package com.example.yiweishi.runoob;
 
 
 import android.content.Context;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.NavigationView;
+
 import android.support.design.widget.TabLayout;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v4.widget.DrawerLayout;
+
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.ActionMenuView;
 import android.support.v7.widget.Toolbar;
-import android.view.Display;
+
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.WindowManager;
+
+import android.view.MotionEvent;
 import android.widget.Button;
 import android.widget.EditText;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RunoobMainActivity extends AppCompatActivity {
+public class RunoobMainActivity extends AppCompatActivity implements OneFragment.SendMessageCom{
 
     private Context mContext;
 
     private Toolbar toolbar;
     private ActionMenuView mActionMenuView;
-
 
     private ViewPager mViewPager;
     private TabLayout mTabLayout;
@@ -43,13 +41,15 @@ public class RunoobMainActivity extends AppCompatActivity {
     private AlertDialog.Builder builder = null;
     private AlertDialog alert =null;
 
+
+    // 為了讓 Toolbar 的 Menu 有作用，這邊的程式不可以拿掉
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // 為了讓 Toolbar 的 Menu 有作用，這邊的程式不可以拿掉
         getMenuInflater().inflate(R.menu.menu_main,menu);
         return true;
     }
 
+    //Main
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,21 +84,11 @@ public class RunoobMainActivity extends AppCompatActivity {
                 return true;
             }
         });
-
         mainviewpager();
 
-
-
-
-
-
-
-
-/*        clickbutton = (Button)findViewById(R.id.click_button);
+/*      clickbutton = (Button)findViewById(R.id.click_button);
         run_message = (EditText)findViewById(R.id.run_message);
         dialogbutton = (Button)findViewById(R.id.dialog_message);
-
-
         //登陆测试
         clickbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,7 +106,6 @@ public class RunoobMainActivity extends AppCompatActivity {
         });
 
         //对话框
-
         dialogbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -138,22 +127,11 @@ public class RunoobMainActivity extends AppCompatActivity {
                                 })
                                 .create(); //创建dialog对象
                 alert.show();
-
             }
         });
-
-        //View切换测试按钮
-
-        ViewPagerButton = (Button)findViewById(R.id.ViewPagerButton);
-        ViewPagerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent it = new Intent(mContext,ShowViewActivity.class);
-                startActivity(it);
-            }
-        });*/
+*/
     }
-    //设置主界面切换view
+    //设置主界面切换view 将tablayout 与 viewPager关联
     public void mainviewpager(){
         mViewPager = (ViewPager) findViewById(R.id.main_view);
         mTabLayout = (TabLayout)findViewById(R.id.toolbarTab);
@@ -170,17 +148,16 @@ public class RunoobMainActivity extends AppCompatActivity {
         fragments.add(new ThreeFragment());
 
         //构建适配器
-        Fragmentadapter adapter =
-                new Fragmentadapter(getSupportFragmentManager(),fragments,titles);
+        Fragmentadapter adapter = new Fragmentadapter(getSupportFragmentManager(),fragments,titles);
         mViewPager.setAdapter(adapter);
-
         //为mTabLayout设置ViewPager
         mTabLayout.setupWithViewPager(mViewPager);
-
-
-
-
     }
 
+    //activity里implement这个接口，并实现抽象方法
+    @Override
+    public void sendMessage(String msg){
+        ToolUtil.showToast(mContext,msg);
+    }
 }
 

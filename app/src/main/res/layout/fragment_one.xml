@@ -6,10 +6,16 @@
     tools:context="com.example.yiweishi.runoob.OneFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/frameOne"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"/>
+
+
+
+        <Button
+            android:id="@+id/dialog_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/run_message"
+            android:text="对话框测试"/>
+
+
 
 </FrameLayout>

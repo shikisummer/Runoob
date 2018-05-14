@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Run</string>
+    <string name="app_name">RunApp</string>
     <string name="title_activity_message">MessageActivity</string>
     <string name="title_activity_view_show">ViewShowActivity</string>
     <string name="action_settings">Settings</string>
