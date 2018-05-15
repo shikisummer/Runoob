@@ -7,7 +7,27 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/activity_horizontal_margin">
 
+        <EditText
+            android:layout_below="@+id/toolbar"
+            android:id="@+id/run_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:hint="Hello World!" />
+
+        <Button
+            android:id="@+id/click_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/run_message"
+            android:layout_alignParentRight="true"
+
+            android:text="登录"/>
 
         <Button
             android:id="@+id/dialog_message"
@@ -16,6 +36,26 @@
             android:layout_below="@+id/run_message"
             android:text="对话框测试"/>
 
+        <Button
+            android:id="@+id/ViewPagerButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dialog_message"
+            android:text="切换界面测试"/>
 
+        <Button
+            android:id="@+id/WebViewButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ViewPagerButton"
+            android:text="WebView跳转"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/frameOne"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"/>
 
 </FrameLayout>

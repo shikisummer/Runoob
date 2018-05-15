@@ -17,7 +17,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import android.view.MotionEvent;
 import android.widget.Button;
 import android.widget.EditText;
 import java.util.ArrayList;
@@ -86,24 +85,7 @@ public class RunoobMainActivity extends AppCompatActivity implements OneFragment
         });
         mainviewpager();
 
-/*      clickbutton = (Button)findViewById(R.id.click_button);
-        run_message = (EditText)findViewById(R.id.run_message);
-        dialogbutton = (Button)findViewById(R.id.dialog_message);
-        //登陆测试
-        clickbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String message = run_message.getText().toString().trim();
-
-                if (message.equals("11")) {
-                    ToolUtil.showToast(mContext, "输入非11");
-                } else {
-                    Intent it = new Intent(mContext, MessageActivity.class);
-                    it.putExtra("itmessage", message);
-                    startActivity(it);
-                }
-            }
-        });
+/*
 
         //对话框
         dialogbutton.setOnClickListener(new View.OnClickListener() {

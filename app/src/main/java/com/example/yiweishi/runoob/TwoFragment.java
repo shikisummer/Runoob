@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.TextView;
 
 
@@ -28,9 +29,12 @@ public class TwoFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_two,container,false);
-
+/*
         TextView textViewTwoPager =(TextView)view.findViewById(R.id.frameTwo);
-        textViewTwoPager.setText("Two pager");
+        textViewTwoPager.setText("Two pager");*/
+
+
+
         return view;
     }
 
