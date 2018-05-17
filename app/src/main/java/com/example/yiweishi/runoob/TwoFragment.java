@@ -2,6 +2,7 @@ package com.example.yiweishi.runoob;
 
 
 
+import android.content.Intent;
 import android.os.Bundle;
 
 
@@ -61,6 +62,33 @@ public class TwoFragment extends Fragment {
                 return false;
             }
         });
+        //或者点击之后跳转到显示图片的页面
+        fwebView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                WebView.HitTestResult hitTestResult = ((WebView) v).getHitTestResult();
+                if (null == hitTestResult)
+                    return false;
+                int type = hitTestResult.getType();
+                if (type == WebView.HitTestResult.UNKNOWN_TYPE)
+                    return false;
+                // 这里可以拦截很多类型，我们只处理图片类型就可以了
+                switch (type) {
+                    case WebView.HitTestResult.IMAGE_TYPE:
+                        String saveImgUrl = hitTestResult.getExtra();
+
+                        // 跳转到图片详情页，显示图片
+                        Intent intent = new Intent(getActivity(), MessageActivity.class);
+                        intent.putExtra("imgUrl", saveImgUrl);
+                        startActivity(intent);
+                        break;
+                    default:
+                        break;
+                }
+                return true;
+            }
+        });
+
     }
 
 }

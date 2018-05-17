@@ -16,6 +16,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@mipmap/run"/>
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/button_toast"
@@ -32,6 +36,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="显示对话框"/>
+
+    <ImageView
+        android:id="@+id/showWebViewPic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 
 
 </LinearLayout>

@@ -14,6 +14,7 @@ import android.support.v7.app.NotificationCompat;
 import android.view.View;
 import android.widget.Button;
 
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MessageActivity extends AppCompatActivity {
@@ -48,7 +49,7 @@ public class MessageActivity extends AppCompatActivity {
         text1 = (TextView)findViewById(R.id.text1);
         Intent it = getIntent();
         final String message = it.getStringExtra("itmessage");
-        text1.setText(message);
+        text1.setText("登陆信息："+message);
 
         button_toast = (Button) findViewById(R.id.button_toast);
         button_show = (Button) findViewById(R.id.button_show);
@@ -81,6 +82,17 @@ public class MessageActivity extends AppCompatActivity {
             }
         });
 
+        //显示来自网页图片
+        Intent intent = getIntent();
+        final String  imageURL = intent.getStringExtra("imgUrl");
+
+        TextView text2 = (TextView)findViewById(R.id.text2);
+        text2.setText("图片地址："+imageURL);
+
+
+        Bitmap bitmap = BitmapFactory.decodeFile(imageURL);
+        ImageView showWebViewPic = (ImageView)findViewById(R.id.showWebViewPic);
+        showWebViewPic.setImageBitmap(bitmap);
 
 
     }
