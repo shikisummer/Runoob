@@ -82,7 +82,7 @@ public class MessageActivity extends AppCompatActivity {
             }
         });
 
-        //显示来自网页图片
+        //显示来自网页图片长按显示原图片
         Intent intent = getIntent();
         final String  imageURL = intent.getStringExtra("imgUrl");
 
