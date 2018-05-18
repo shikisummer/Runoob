@@ -17,6 +17,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 public class MessageActivity extends AppCompatActivity {
 
     private TextView text1;
@@ -84,16 +88,33 @@ public class MessageActivity extends AppCompatActivity {
 
         //显示来自网页图片长按显示原图片
         Intent intent = getIntent();
-        final String  imageURL = intent.getStringExtra("imgUrl");
+        String  imageURL = intent.getStringExtra("imgUrl");
 
         TextView text2 = (TextView)findViewById(R.id.text2);
         text2.setText("图片地址："+imageURL);
 
-
-        Bitmap bitmap = BitmapFactory.decodeFile(imageURL);
+        Bitmap bitmap = downImage(imageURL);
         ImageView showWebViewPic = (ImageView)findViewById(R.id.showWebViewPic);
         showWebViewPic.setImageBitmap(bitmap);
 
+        /*Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.mipmap.run);
+        ImageView showWebViewPic = (ImageView)findViewById(R.id.showWebViewPic);
+        showWebViewPic.setImageBitmap(bitmap);*/
 
     }
+        private byte[] downImage(String url){
+            URL imageurl = new URL(url);
+            // 拿到HTTP连接对象
+            HttpURLConnection connection = (HttpURLConnection) imageurl.openConnection();
+            // 设置连接超时
+            connection.setConnectTimeout(5000);
+            // HTTP请求方式
+            connection.setRequestMethod("GET");
+            // 获得响应状态码
+            int code = connection.getResponseCode();
+            if (code == 200) {
+                InputStream is = connection.getInputStream();
+
+            }
+        }
 }
